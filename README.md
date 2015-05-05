@@ -44,8 +44,8 @@
     angular.module('myApp',['ui.router'])
     .run(function($rootScope,$window){
       $rootScope.$on('$viewContentLoaded',function(){
-        var html= document.body.innerHTML.trim();
-        if(html.length){
+        var renderedTemplate= document.body.innerHTML.trim().length>0
+        if(renderedTemplate){
           $window.expressTurnoutRendered();
         }
       });
