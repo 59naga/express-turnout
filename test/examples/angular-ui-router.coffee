@@ -9,7 +9,7 @@ turnout= require '../../'
 app= express()
 app.use turnout()
 app.use (req,res)->
-  res.sendFile __dirname+'/angular-ui-router-html5.html'
+  res.sendFile __dirname+'/angular-ui-router.html'
 
 # Boot
 app.listen port,->

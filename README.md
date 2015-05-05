@@ -109,7 +109,7 @@ Example:
 ```bash
 $ curl -A Googlebot http://localhost:59798/second
 
-$ DEBUG=express:turnout coffee test/examples/angulaui-router-html5.coffee
+$ DEBUG=express:turnout node test/examples/angular-ui-router
 #  express:turnout new Turnout +0ms {"ua":["Googlebot","Twitterbot"],"blacklist":[],"whitelist":[],"timeout":1000,"eventName":"expressTurnoutRendered"}
 #  express:turnout [ 'Googlebot', index: 0, input: 'Googlebot' ] +1m isBot Googlebot
 #  express:turnout Render http://localhost:59798/second? Limit by 1000ms +2ms
