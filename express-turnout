@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var turnout;
+if(require('module')._extensions['.coffee']==null){
+  turnout= require('./src');
+}
+else{
+  turnout= require('./lib');
+}
+module.exports= turnout;
