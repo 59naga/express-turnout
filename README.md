@@ -1,6 +1,6 @@
 # ![icon][.svg] Express-turnout
 
-> Angular.js pre-rendering for Googlebot
+> Angular.js pre-rendering for crawlers.
 
 ## Setup
 
@@ -37,7 +37,7 @@
   <script src="/express-turnout.js"></script>
   ```
 
-5. Finally, Execute window.expressTurnoutRendered() at Timing of Should be read for crawler.
+5. Finally, Execute window.expressTurnoutRendered() at Timing of Should be read for crawlers.
 
   Example:
   ```js
@@ -56,7 +56,7 @@
     ;
   ```
 
-## How to check the source code for crawler?
+## How it works the source code for crawlers?
 Add '?_escaped_fragment_' to URL.
 
 Example:
