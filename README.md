@@ -1,4 +1,4 @@
-# ![icon][.svg] Express-turnout [![NPM version][npm-image]][npm] [![Build Status][travis-image]][travis] [![Coverage Status][coveralls-image]][coveralls]
+# ![icon][.svg] expressTurnout [![NPM version][npm-image]][npm] [![Build Status][travis-image]][travis] [![Coverage Status][coveralls-image]][coveralls]
 
 > Angular.js pre-rendering for crawlers.
 
@@ -131,9 +131,9 @@ License
 
 [.svg]: https://cdn.rawgit.com/59naga/express-turnout/master/.svg
 
-[npm-image]: https://badge.fury.io/js/express-turnout.svg
+[npm-image]:https://img.shields.io/npm/v/express-turnout.svg?style=flat-square
 [npm]: https://npmjs.org/package/express-turnout
-[travis-image]: https://travis-ci.org/59naga/express-turnout.svg?branch=master
+[travis-image]: http://img.shields.io/travis/59naga/express-turnout.svg?style=flat-square
 [travis]: https://travis-ci.org/59naga/express-turnout
-[coveralls-image]: https://coveralls.io/repos/59naga/express-turnout/badge.svg?branch=master
+[coveralls-image]: http://img.shields.io/coveralls/59naga/express-turnout.svg?style=flat-square
 [coveralls]: https://coveralls.io/r/59naga/express-turnout?branch=master
