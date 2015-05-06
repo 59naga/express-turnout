@@ -40,6 +40,7 @@ describe 'Options',->
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'first'
         expect($.find('a').text()).toBe 'second'
+        expect($.find('meta').length).toBe 1+5
 
         done()
 
@@ -54,6 +55,7 @@ describe 'Options',->
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'second'
         expect($.find('a').text()).toBe 'first'
+        expect($.find('meta').length).toBe 1+5
         
         done()
         
@@ -95,6 +97,7 @@ describe 'Options',->
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'first'
         expect($.find('a').text()).toBe 'second'
+        expect($.find('meta').length).toBe 1+5
 
         done()
 
@@ -110,6 +113,7 @@ describe 'Options',->
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'second'
         expect($.find('a').text()).toBe 'first'
+        expect($.find('meta').length).toBe 1+5
         
         done()
         
