@@ -2,20 +2,19 @@
   "name": "express-turnout",
   "main": "express-turnout",
   "description": "Pre-rendering Single-Page-Application for crawlers.",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.2",
 
   "scripts": {
     "postinstall": "coffee -o src -c lib",
     
-    "test": "jasminetea test --verbose --cover --report --lint"
+    "test": "jasminetea test --verbose --cover --report --lint --timeout 2500"
   },
 
   "dependencies": {
     "bluebird": "^2.9.25",
     "coffee-script": "^1.9.2",
     "debug": "^2.1.3",
-    "express": "^4.12.3",
-    "phantom": "^0.7.2"
+    "express": "^4.12.3"
   },
   "devDependencies": {
     "jasminetea": "^0.1.30-rc.1",

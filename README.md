@@ -4,9 +4,23 @@
 
 ## Setup
 
-1. Install [phantomjs 2.0.0](https://github.com/sgentle/phantomjs-node#phantomjs-bridge-for-nodejs-)
+1. Install [phantomjs 2.0.0](http://phantomjs.org/download.html)
    or [Build](http://blog.rampinteractive.co.uk/compiling-phantomjs-2-0-for-aws-ec2-linux-image/)
+
+  ```
+  λ phantomjs -v
+  λ 2.0.0
+  ```
+
+  Or
+
+  ```bash
+  $ phantomjs -v
+  $ 2.0.0
+  ```
+
 2. Install modules
+
   ```bash
   $ npm install express express-turnout --save
   ```
@@ -14,6 +28,7 @@
 3. Use express-turnout before routing. 
 
   Example:
+
   ```js
   // Environment
   var port= 59798;
@@ -34,6 +49,7 @@
   ```
 
 4. Add below to &lt;head&gt; in index.html:
+
   ```html
   <script src="/express-turnout.js"></script>
   ```
@@ -41,6 +57,7 @@
 5. Finally, Execute window.expressTurnoutRendered() at Timing of Should be read for crawlers.
 
   Example:
+  
   ```js
   angular.module('myApp',['ui.router'])
   .run(function($rootScope,$window){

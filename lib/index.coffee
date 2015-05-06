@@ -20,9 +20,8 @@ turnoutMiddleware= (options={})->
       res.status 200
       res.end html
     .catch (error)->
-      throw error if typeof error isnt 'string'
       res.status 403
-      res.end error
+      res.end error.toString()
 
   router
 

@@ -1,8 +1,9 @@
 # Dependencies
 debug= (require 'debug') 'express:turnout'
 
-phantomjsNode= require 'phantom'
-Promise= require 'bluebird'
+# phantomjsNode= require 'phantom'
+phantomScript= require.resolve './turnout.phantom.js'
+exec= (require 'child_process').exec
 querystring= require 'querystring'
 
 class Turnout
@@ -11,7 +12,7 @@ class Turnout
     @options.blacklist?= []
     @options.whitelist?= []
 
-    @options.timeout?= 1000
+    @options.timeout?= 2000
     @options.eventName?= 'expressTurnoutRendered'
 
     debug 'new Turnout',@options
@@ -54,24 +55,12 @@ class Turnout
         
         return reject 'Disallow by whitelist' unless matched
 
-      phantomjsNode.create (phantom)->
-        rendered= (error,html='')->
-          debug 'Rendered',html
+      script= "phantomjs #{phantomScript} #{uri} #{options.timeout}"
+      debug 'Execute '+script
 
-          clearTimeout id
-          phantom.exit()
-          
-          resolve html unless error?
-          reject error if error?
-
-        phantom.createPage (page)->
-          page.open uri
-          page.set 'onCallback',(name,html)->
-            rendered null,html if name is options.eventName
-
-        id= setTimeout ->
-          rendered 'Timeout'
-        ,options.timeout
+      exec script,(error,stdout)->
+        resolve stdout unless error?
+        reject error if error?
 
   getUri: (req)->
     uri= req.protocol+'://'+req.get('host')+req.originalUrl
