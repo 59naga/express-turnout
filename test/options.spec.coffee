@@ -148,8 +148,8 @@ describe 'Options',->
           'User-Agent': 'Googlebot'
       .spread (response)->
         expect(response.statusCode).toBe 403
-        # expect(response.headers['x-powered-by']).toBe 'Express-turnout'
-        # expect(response.body).toBe 'Timeout'
+        expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        expect(response.body).toBe 'Timeout'
         
         done()
 
