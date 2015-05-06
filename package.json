@@ -2,7 +2,7 @@
   "name": "express-turnout",
   "main": "express-turnout",
   "description": "Pre-rendering Single-Page-Application for crawlers.",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
 
   "scripts": {
     "postinstall": "coffee -o src -c lib",
@@ -18,7 +18,7 @@
     "phantom": "^0.7.2"
   },
   "devDependencies": {
-    "jasminetea": "^0.1.30-rc.0",
+    "jasminetea": "^0.1.30-rc.1",
     "request": "^2.55.0",
     "cheerio": "^0.19.0"
   },
