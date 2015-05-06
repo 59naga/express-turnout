@@ -12,11 +12,11 @@ node_js:
 # Coveralls.io options
 env:
   global:
-    secure: OID6NhbNlc7a3Knz1J9zSWQvYxuesNHo76AYqzBaz96kV4kHBNqr1/K9ay94j7us9mLnBycP2PLrZZimqSiIt6ES7LAu1SY6It456/7AA5d8CkazO0dYdUcsvZwCw+rKFBLmOv4tmbHGxQQzfAkrOytwDHcef/+b47gLF1fa3pQ=
+    secure: rg7yX3iB0rDavR+5AVDhEDUDFjHe/+U6AqyH64/8nlEDDCaJ2LsQvoOuJxi7gN0D8xTVAoke1Pd+aibeB/ipuVT12iAQIemZNnmsIzHdwTbCiPBgU68lWtrI3RyquW1rsBiuWdQIAbGXHh0ymbISj/1U//zPtCPUFicKPa4ZTZA=
 
 # Npm publish options
 deploy:
   provider: npm
   email: i59naga@icloud.com
   api_key:
-    secure: nhPAJZJq2Egb0DBboYFKy6C71WhheyXgiU0tlWepJJx7XwsQdMlyJlwqJdgjxPhnFXBZzOSGsGvwXPt792VTtXaaIN8af1LHsf8eLJPM5pci97FmzTkiOsVbDcpFCDNgfK6gHDqmGn2kxOlnfXkKmfRNjO6yPtv/s+3q2OMDaQc=
+    secure: QXP/Vf1A4XATZNFgs3RY1aATMbkVrfX72diW9pVLwRkiCj6g9J3dXkf0UZ2HVWeeUtUaKgSe6PAsnFe8RhFF7ATWhGNxFClb2nqnwl7O+SDh+oT9kZuJ/bHl+Z5CiANiVpgexUAyYD5L8gVhkuYtTHRZZhfrUmo2FAf9Vp1akt8=
