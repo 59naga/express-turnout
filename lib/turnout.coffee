@@ -13,7 +13,7 @@ class Turnout
     @options.blacklist?= []
     @options.whitelist?= []
 
-    @options.timeout?= 2000
+    @options.timeout?= 3000
     @options.eventName?= 'expressTurnoutRendered'
 
     debug 'new Turnout',@options
@@ -60,8 +60,8 @@ class Turnout
       debug 'Execute '+script
 
       exec script,(error,stdout)->
-        resolve stdout unless error?
-        reject error if error?
+        resolve stdout.trim() unless error?
+        reject stdout.trim() if error?
 
   getUri: (req)->
     uri= req.protocol+'://'+req.get('host')+req.originalUrl

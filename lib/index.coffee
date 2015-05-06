@@ -21,7 +21,7 @@ turnoutMiddleware= (options={})->
       res.end html
     .catch (error)->
       res.status 403
-      res.end error.toString()
+      res.end error.message ? error
 
   router
 
