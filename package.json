@@ -7,7 +7,7 @@
   "scripts": {
     "postinstall": "coffee -o src -c lib",
     
-    "test": "jasminetea test --verbose --cover --report"
+    "test": "jasminetea test --verbose --cover --report --lint"
   },
 
   "dependencies": {
