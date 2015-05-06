@@ -19,9 +19,8 @@ class Turnout
   isBot: (req)->
     ua= req.headers['user-agent'] ? ''
 
-    bot= yes if '_escaped_fragment_' in Object.keys(req.query)
     bot?= ua.match key for key in @options.ua
-    bot?= req.query.bot?
+    bot?= req.query._escaped_fragment_?
 
     debug bot,'isBot',ua
 
@@ -77,7 +76,7 @@ class Turnout
     uri= req.protocol+'://'+req.get('host')+req.originalUrl
     [url,params]= uri.split '?',2
     qs= querystring.parse params
-    delete qs['_escaped_fragment_']
+    delete qs._escaped_fragment_
     uri= url+'?'+querystring.stringify qs
 
     uri
