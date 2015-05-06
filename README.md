@@ -9,14 +9,14 @@
 
   ```
   λ phantomjs -v
-  λ 2.0.0
+  # 2.0.0
   ```
 
   Or
 
   ```bash
   $ phantomjs -v
-  $ 2.0.0
+  # 2.0.0
   ```
 
 2. Install modules
