@@ -56,7 +56,7 @@
   ;
   ```
 
-> [Demo](https://github.com/59naga/turnout.berabou.me)
+> [Demo - http://turnout.berabou.me](https://github.com/59naga/turnout.berabou.me)
 
 ## How it works the source code for crawlers?
 Add '?_escaped_fragment_' to URL.
