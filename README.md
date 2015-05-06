@@ -4,7 +4,8 @@
 
 ## Setup
 
-1. Install [phantomjs](https://github.com/sgentle/phantomjs-node#installation)
+1. Install [phantomjs 2.0.0](https://github.com/sgentle/phantomjs-node#phantomjs-bridge-for-nodejs-)
+   or [Build](http://blog.rampinteractive.co.uk/compiling-phantomjs-2-0-for-aws-ec2-linux-image/)
 2. Install modules
   ```bash
   $ npm install express express-turnout --save
