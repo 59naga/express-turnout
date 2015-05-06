@@ -1,6 +1,6 @@
 # ![icon][.svg] expressTurnout [![NPM version][npm-image]][npm] [![Build Status][travis-image]][travis] [![Coverage Status][coveralls-image]][coveralls]
 
-> Pre-rendering for crawlers.
+> Pre-rendering Single-Page-Application for crawlers.
 
 ## Setup
 
