@@ -14,7 +14,7 @@ class Turnout
     @options.timeout?= 1000
     @options.eventName?= 'expressTurnoutRendered'
 
-    debug 'new Turnout',JSON.stringify @options
+    debug 'new Turnout',@options
 
   isBot: (req)->
     ua= req.headers['user-agent'] ? ''
@@ -27,25 +27,28 @@ class Turnout
 
     bot
 
-  render: (uri)->
+  render: (req)->
+    uri= @getUri req
     options= @options
 
     debug "Render #{uri} Limit by #{options.timeout}ms"
 
     new Promise (resolve,reject)->
+      url= req.originalUrl.slice 1
+
       if options.blacklist.length
         for pattern in options.blacklist
-          debug (uri.match pattern),'blacklisted',uri,'by',pattern
+          debug (url.match pattern),'blacklisted',url,'by',pattern
 
-          if uri.match pattern
+          if url.match pattern
             return reject 'Disallow by blacklist "'+pattern+'"'
 
       if options.whitelist.length
         matched= no
         for pattern in options.whitelist
-          debug (uri.match pattern),'whitelisted',uri,'by',pattern
+          debug (url.match pattern),'whitelisted',url,'by',pattern
           
-          if uri.match pattern
+          if url.match pattern
             matched= yes
             break
         

@@ -7,7 +7,7 @@ var turnout= require('../../');
 
 // Setup express
 var app= express();
-app.use(turnout());
+app.use(turnout({blacklist:[/^secret/]}));
 app.use(function(req, res) {
   res.sendFile(__dirname + '/angular-ui-router.html');
 });

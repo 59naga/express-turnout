@@ -13,7 +13,9 @@ turnoutMiddleware= (options={})->
   router.use (req,res,next)->
     return next() unless turnout.isBot req
 
-    turnout.render turnout.getUri req
+    res.setHeader 'x-powered-by','Express-turnout'
+
+    turnout.render req
     .then (html)->
       res.status 200
       res.end html

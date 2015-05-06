@@ -26,14 +26,21 @@ describe 'expressTurnout',->
     it 'prerender /',(done)->
       request url+'?_escaped_fragment_'
       .spread (response)->
+        expect(response.statusCode).toBe 200
+        expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'first'
         expect($.find('a').text()).toBe 'second'
 
         done()
+    
     it 'prerender /second',(done)->
       request url+'second?_escaped_fragment_'
       .spread (response)->
+        expect(response.statusCode).toBe 200
+        expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'second'
         expect($.find('a').text()).toBe 'first'
@@ -47,12 +54,14 @@ describe 'expressTurnout',->
         headers:
           'User-Agent': 'Googlebot'
       .spread (response)->
+        expect(response.statusCode).toBe 200
+        expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'first'
         expect($.find('a').text()).toBe 'second'
 
         done()
-
 
     it 'prerender /second',(done)->
       request
@@ -60,6 +69,9 @@ describe 'expressTurnout',->
         headers:
           'User-Agent': 'Googlebot'
       .spread (response)->
+        expect(response.statusCode).toBe 200
+        expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'second'
         expect($.find('a').text()).toBe 'first'
@@ -73,12 +85,14 @@ describe 'expressTurnout',->
         headers:
           'User-Agent': 'Twitterbot'
       .spread (response)->
+        expect(response.statusCode).toBe 200
+        expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'first'
         expect($.find('a').text()).toBe 'second'
 
         done()
-
 
     it 'prerender /second',(done)->
       request
@@ -86,6 +100,9 @@ describe 'expressTurnout',->
         headers:
           'User-Agent': 'Twitterbot'
       .spread (response)->
+        expect(response.statusCode).toBe 200
+        expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'second'
         expect($.find('a').text()).toBe 'first'

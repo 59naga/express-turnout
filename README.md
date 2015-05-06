@@ -41,19 +41,19 @@
 
   Example:
   ```js
-    angular.module('myApp',['ui.router'])
-    .run(function($rootScope,$window){
-      $rootScope.$on('$viewContentLoaded',function(){
-        var renderedTemplate= document.body.innerHTML.trim().length>0
-        if(renderedTemplate){
-          $window.expressTurnoutRendered();
-        }
-      });
-    })
-    .config(function($stateProvider){
-      // states...
-    })
-    ;
+  angular.module('myApp',['ui.router'])
+  .run(function($rootScope,$window){
+    $rootScope.$on('$viewContentLoaded',function(){
+      var renderedTemplate= document.body.innerHTML.trim().length>0
+      if(renderedTemplate){
+        $window.expressTurnoutRendered();
+      }
+    });
+  })
+  .config(function($stateProvider){
+    // states...
+  })
+  ;
   ```
 
 ## How it works the source code for crawlers?
