@@ -19,6 +19,7 @@ class Turnout
   isBot: (req)->
     ua= req.headers['user-agent'] ? ''
 
+    bot= null
     bot?= ua.match key for key in @options.ua
     bot?= req.query._escaped_fragment_?
 
