@@ -1,8 +1,9 @@
 # Dependencies
 debug= (require 'debug') 'express:turnout'
-querystring= require 'querystring'
+
 phantomjsNode= require 'phantom'
 Promise= require 'bluebird'
+querystring= require 'querystring'
 
 class Turnout
   constructor: (@options={})->
@@ -16,7 +17,7 @@ class Turnout
     debug 'new Turnout',JSON.stringify @options
 
   isBot: (req)->
-    ua= req.headers['user-agent']
+    ua= req.headers['user-agent'] ? ''
 
     bot= yes if '_escaped_fragment_' in Object.keys(req.query)
     bot?= ua.match key for key in @options.ua
@@ -26,27 +27,25 @@ class Turnout
 
     bot
 
-  render: (req)->
-    uri= @getUri req
+  render: (uri)->
     options= @options
 
     debug "Render #{uri} Limit by #{options.timeout}ms"
 
-    new Promise (resolve,reject)=>
-      url= req.originalUrl.slice 1
+    new Promise (resolve,reject)->
       if options.blacklist.length
         for pattern in options.blacklist
-          debug (url.match pattern),'blacklisted',url,'by',pattern
+          debug (uri.match pattern),'blacklisted',uri,'by',pattern
 
-          if url.match pattern
+          if uri.match pattern
             return reject 'Disallow by blacklist "'+pattern+'"'
 
       if options.whitelist.length
         matched= no
         for pattern in options.whitelist
-          debug (url.match pattern),'whitelisted',url,'by',pattern
+          debug (uri.match pattern),'whitelisted',uri,'by',pattern
           
-          if url.match pattern
+          if uri.match pattern
             matched= yes
             break
         

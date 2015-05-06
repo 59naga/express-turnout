@@ -1,13 +1,13 @@
 {
   "name": "express-turnout",
   "main": "express-turnout",
-  "description": "Angular.js pre-rendering for Googlebot",
-  "version": "0.0.0-beta.0",
+  "description": "Pre-rendering for crawlers",
+  "version": "0.0.0-beta.1",
 
   "scripts": {
     "postinstall": "coffee -o src -c lib",
     
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasminetea test --verbose --cover --report"
   },
 
   "dependencies": {
@@ -18,12 +18,15 @@
     "phantom": "^0.7.2"
   },
   "devDependencies": {
-    
+    "jasminetea": "^0.1.30-rc.0",
+    "request": "^2.55.0",
+    "cheerio": "^0.19.0"
   },
 
   "keywords": [
     "express",
     "middleware",
+    "prerendering",
     "angular",
     "seo"
   ],

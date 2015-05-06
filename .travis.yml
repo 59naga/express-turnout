@@ -10,7 +10,13 @@ node_js:
   - '0.10'
 
 # Coveralls.io options
-# ...
+env:
+  global:
+    secure: OID6NhbNlc7a3Knz1J9zSWQvYxuesNHo76AYqzBaz96kV4kHBNqr1/K9ay94j7us9mLnBycP2PLrZZimqSiIt6ES7LAu1SY6It456/7AA5d8CkazO0dYdUcsvZwCw+rKFBLmOv4tmbHGxQQzfAkrOytwDHcef/+b47gLF1fa3pQ=
 
 # Npm publish options
-# ...
+deploy:
+  provider: npm
+  email: i59naga@icloud.com
+  api_key:
+    secure: nhPAJZJq2Egb0DBboYFKy6C71WhheyXgiU0tlWepJJx7XwsQdMlyJlwqJdgjxPhnFXBZzOSGsGvwXPt792VTtXaaIN8af1LHsf8eLJPM5pci97FmzTkiOsVbDcpFCDNgfK6gHDqmGn2kxOlnfXkKmfRNjO6yPtv/s+3q2OMDaQc=

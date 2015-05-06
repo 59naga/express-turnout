@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome bot!</title>
+  <base href="/">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.js"></script>
+  
+  <script src="/express-turnout.js"></script>
+  <script>
+angular.module('myApp',['ui.router'])
+.run(function($rootScope,$window){
+  $rootScope.$on('$viewContentLoaded',function(){
+    var renderedTemplate= document.body.innerHTML.trim().length>0
+    if(renderedTemplate){
+      $window.expressTurnoutRendered();
+    }
+  });
+})
+.config(function($locationProvider){
+  $locationProvider.html5Mode(true);
+})
+.config(function($stateProvider){
+  $stateProvider.state('second',{
+    url:'/second',
+    template:'<h1>second</h1><a ui-sref="first">first</a>',
+  });
+  $stateProvider.state('first',{
+    url:'*path',
+    template:'<h1>first</h1><a ui-sref="second">second</a>',
+  });
+})
+;
+  </script>
+</head>
+<body ui-view></body>
+</html>

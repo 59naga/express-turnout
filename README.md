@@ -1,6 +1,6 @@
 # ![icon][.svg] expressTurnout [![NPM version][npm-image]][npm] [![Build Status][travis-image]][travis] [![Coverage Status][coveralls-image]][coveralls]
 
-> Angular.js pre-rendering for crawlers.
+> Pre-rendering for crawlers.
 
 ## Setup
 
