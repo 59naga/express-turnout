@@ -74,6 +74,7 @@
   ;
   ```
 
+> [Spec - expressTurnout](./test/express-turnout.spec.coffee#L25)
 > [Demo - http://turnout.berabou.me](https://github.com/59naga/turnout.berabou.me)
 
 ## How it works the source code for crawlers?
@@ -103,24 +104,35 @@ $ curl http://localhost:59798/?_escaped_fragment_
 ## express-turnout(options)
 ### Options
 #### `blacklist`
-Return 403 If matched URL in RegExps.
+Return 403 If matched URL in RegExps.[1]
 
 Default: `[]`
 
 #### `whitelist`
-Return 403 Unless matched URL in RegExps.
+Return 403 Unless matched URL in RegExps.[2]
 
 Default: `[]`
 
 #### `timeout`
-Return 403 if exceeded the time.
+Return 403 if exceeded the time.[3]
+
+Default: `1000` ms
+
+#### `maxBuffer`
+Return 500 if rendered html is more than the number of bytes.[4]
 
 Default: `1000` ms
 
 #### `ua`
-Do Pre-rendering If matched UserAgent in RegExps.
+Do Pre-rendering If matched UserAgent in RegExps.[5]
 
 Default: `['Googlebot','Twitterbot']`
+
+[1]: ./test/options.spec.coffee#L17
+[2]: ./test/options.spec.coffee#L76
+[3]: ./test/options.spec.coffee#L137
+[4]: ./test/options.spec.coffee#L163
+[5]: ./test/options.spec.coffee#L189
 
 ## `DEBUG=express:turnout`
 > See [Debugging Express](http://expressjs.com/guide/debugging.html)

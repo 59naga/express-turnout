@@ -20,9 +20,12 @@ turnoutMiddleware= (options={})->
       res.status 200
       res.set 'Content-Type','text/html'
       res.end html
+    .catch Error,(error)->
+      res.status 500
+      res.end error.message
     .catch (error)->
       res.status 403
-      res.end error.message ? error
+      res.end error
 
   router
 

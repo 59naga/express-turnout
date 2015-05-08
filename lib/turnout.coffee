@@ -14,8 +14,7 @@ class Turnout
     @options.whitelist?= []
 
     @options.timeout?= 3000
-    @options.maxBuffer?= 1000* 1024
-    @options.eventName?= 'expressTurnoutRendered'
+    @options.maxBuffer?= 1024* 1024
 
     debug 'new Turnout',@options
 
@@ -60,9 +59,12 @@ class Turnout
       script= "phantomjs #{phantomScript} #{uri} #{options.timeout}"
       debug 'Execute '+script
 
-      exec script,{maxBuffer:options.maxBuffer},(error,stdout)->
+      exec script,{maxBuffer:options.maxBuffer},(error,stdout,stderr)->
         resolve stdout.trim() unless error?
-        reject stdout.trim() if error?
+
+        summary= stderr.trim()
+        summary= error if error?.message is 'stdout maxBuffer exceeded.'
+        reject summary
 
   getUri: (req)->
     uri= req.protocol+'://'+req.get('host')+req.originalUrl
