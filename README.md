@@ -74,8 +74,8 @@
   ;
   ```
 
-> [Spec - expressTurnout](./test/express-turnout.spec.coffee#L25)
-> [Demo - http://turnout.berabou.me](https://github.com/59naga/turnout.berabou.me)
+> * [Spec - expressTurnout](./test/express-turnout.spec.coffee#L25)
+> * [Demo - http://turnout.berabou.me](https://github.com/59naga/turnout.berabou.me)
 
 ## How it works the source code for crawlers?
 Add '?_escaped_fragment_' to URL.
@@ -104,27 +104,27 @@ $ curl http://localhost:59798/?_escaped_fragment_
 ## express-turnout(options)
 ### Options
 #### `blacklist`
-Return 403 If matched URL in RegExps.[1]
+[Return 403 If matched URL in RegExps.][1]
 
 Default: `[]`
 
 #### `whitelist`
-Return 403 Unless matched URL in RegExps.[2]
+[Return 403 Unless matched URL in RegExps.][2]
 
 Default: `[]`
 
 #### `timeout`
-Return 403 if exceeded the time.[3]
+[Return 403 if exceeded the time.][3]
 
 Default: `1000` ms
 
 #### `maxBuffer`
-Return 500 if rendered html is more than the number of bytes.[4]
+[Return 500 if rendered html is more than the number of bytes.][4]
 
 Default: `1000` ms
 
 #### `ua`
-Do Pre-rendering If matched UserAgent in RegExps.[5]
+[Do Pre-rendering If matched UserAgent in RegExps.][5]
 
 Default: `['Googlebot','Twitterbot']`
 
