@@ -60,7 +60,7 @@ class Turnout
       script= "phantomjs #{phantomScript} #{uri} #{options.timeout}"
       debug 'Execute '+script
 
-      exec script,maxBuffer:@options.maxBuffer,(error,stdout)->
+      exec script,{maxBuffer:options.maxBuffer},(error,stdout)->
         resolve stdout.trim() unless error?
         reject stdout.trim() if error?
 
