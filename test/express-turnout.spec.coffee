@@ -28,6 +28,7 @@ describe 'expressTurnout',->
       .spread (response)->
         expect(response.statusCode).toBe 200
         expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        expect(response.headers['content-type']).toBe 'text/html; charset=utf-8'
         
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'first'
@@ -41,6 +42,7 @@ describe 'expressTurnout',->
       .spread (response)->
         expect(response.statusCode).toBe 200
         expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        expect(response.headers['content-type']).toBe 'text/html; charset=utf-8'
         
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'second'
@@ -58,6 +60,7 @@ describe 'expressTurnout',->
       .spread (response)->
         expect(response.statusCode).toBe 200
         expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        expect(response.headers['content-type']).toBe 'text/html; charset=utf-8'
 
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'first'
@@ -74,6 +77,7 @@ describe 'expressTurnout',->
       .spread (response)->
         expect(response.statusCode).toBe 200
         expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        expect(response.headers['content-type']).toBe 'text/html; charset=utf-8'
         
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'second'
@@ -91,6 +95,7 @@ describe 'expressTurnout',->
       .spread (response)->
         expect(response.statusCode).toBe 200
         expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        expect(response.headers['content-type']).toBe 'text/html; charset=utf-8'
         
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'first'
@@ -107,6 +112,7 @@ describe 'expressTurnout',->
       .spread (response)->
         expect(response.statusCode).toBe 200
         expect(response.headers['x-powered-by']).toBe 'Express-turnout'
+        expect(response.headers['content-type']).toBe 'text/html; charset=utf-8'
         
         $= cheerio response.body
         expect($.find('h1').text()).toBe 'second'

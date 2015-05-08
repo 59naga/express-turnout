@@ -18,6 +18,7 @@ turnoutMiddleware= (options={})->
     turnout.render req
     .then (html)->
       res.status 200
+      res.set 'Content-Type','text/html'
       res.end html
     .catch (error)->
       res.status 403
