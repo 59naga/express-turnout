@@ -14,6 +14,7 @@ class Turnout
     @options.whitelist?= []
 
     @options.timeout?= 3000
+    @options.maxBuffer?= 1000* 1024
     @options.eventName?= 'expressTurnoutRendered'
 
     debug 'new Turnout',@options
@@ -59,7 +60,7 @@ class Turnout
       script= "phantomjs #{phantomScript} #{uri} #{options.timeout}"
       debug 'Execute '+script
 
-      exec script,(error,stdout)->
+      exec script,maxBuffer:@options.maxBuffer,(error,stdout)->
         resolve stdout.trim() unless error?
         reject stdout.trim() if error?
 
