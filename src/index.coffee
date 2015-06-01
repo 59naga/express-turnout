@@ -8,7 +8,7 @@ turnoutMiddleware= (options={})->
 
   router= Router()
   router.get '/express-turnout.js',(req,res)->
-    res.sendFile path.join __dirname,'express-turnout.js'
+    res.sendFile path.resolve __dirname,'..','lib','express-turnout.js'
 
   router.use (req,res,next)->
     return next() unless turnout.isBot req

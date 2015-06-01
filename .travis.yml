@@ -15,6 +15,8 @@ env:
     secure: rg7yX3iB0rDavR+5AVDhEDUDFjHe/+U6AqyH64/8nlEDDCaJ2LsQvoOuJxi7gN0D8xTVAoke1Pd+aibeB/ipuVT12iAQIemZNnmsIzHdwTbCiPBgU68lWtrI3RyquW1rsBiuWdQIAbGXHh0ymbISj/1U//zPtCPUFicKPa4ZTZA=
 
 # Npm publish options
+before_deploy:
+  - npm install coffee-script --global
 deploy:
   provider: npm
   email: i59naga@icloud.com

@@ -1,6 +1,6 @@
 # Dependencies
 express= require 'express'
-turnout= require '../'
+turnout= require '../src'
 
 Promise= require 'bluebird'
 request= Promise.promisify(require 'request')

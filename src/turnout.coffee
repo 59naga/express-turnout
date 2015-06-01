@@ -4,7 +4,7 @@ debug= (require 'debug') 'express:turnout'
 # phantomjsNode= require 'phantom'
 Promise= require 'bluebird'
 exec= (require 'child_process').exec
-phantomScript= require.resolve './turnout.phantom.js'
+phantomScript= require.resolve '../lib/turnout.phantom.js'
 querystring= require 'querystring'
 
 class Turnout
