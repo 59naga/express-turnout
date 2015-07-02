@@ -1,7 +1,7 @@
 {
   "name": "express-turnout",
   "description": "Pre-rendering Single-Page-Application for crawlers.",
-  "version": "0.0.3",
+  "version": "0.0.4-alpha",
 
   "files": [
     "express-turnout",
